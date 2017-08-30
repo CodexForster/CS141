@@ -1,0 +1,12 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+	float p=0.0,r=0.0,t=0.0;
+	cout<<"Enter the principle, rate and time respectively";
+	cin>>p>>r>>t;
+	cout<<"\nCompound interest is : "<<((p*pow((1+(r/100)),t))-p);
+	return 0;
+}
