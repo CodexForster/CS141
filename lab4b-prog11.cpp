@@ -14,7 +14,9 @@ int main() {
 int n=1,m=1;
 cout<<"Enter 2 numbers";
 cin>>n>>m;
-if(n>m)
+if((n==0)||(m==0))
+cout<<"\nNo HCF";
+else if(n>m)
 func(n,m,m);
 else
 func(m,n,n);
