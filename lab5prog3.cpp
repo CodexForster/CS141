@@ -1,3 +1,4 @@
+
 #include <iostream>
 using namespace std;
 
@@ -36,10 +37,7 @@ for(int l=0;l<i;l++)
 	}
 arr[pos]=arr[l];
 arr2[l]=small;
-}   
-
-for(int z=0;z<i;z++)
-cout<<endl<<arr2[z];
+}  
 
 func_large(arr2,i,k);
 func_small(arr2,i,k);
