@@ -3,9 +3,13 @@ using namespace std;
 
 void func_large(int arr2[],int i,int k)
 {
-	cout<<"\nThe kth largest element is - "<<arr[k-1]
+	cout<<"\nThe "<<k<<" largest element is - "<<arr2[i-k];
 }
 
+void func_small(int arr2[],int i,int k)
+{
+	cout<<"\nThe "<<k<<" smallest element is - "<<arr2[k-1];
+}
 
 int main() {
 int arr[20],arr2[20],i,j;
@@ -13,16 +17,19 @@ cout<<"Enter how many elements you want to have";
 cin>>i;
 cout<<"\nEnter the elements ";
 for(int z=0;z<i;z++)
-{cin>>arr[z];
-arr2[z]=arr[z];}
+cin>>arr[z];
+
+for(int z=0;z<i;z++)
+arr2[z]=arr[z];
 int k;
 cout<<"\nEnter k to find the kth largest and kth smallest element";
 cin>>k;
-int small=arr[0],pos;
-for(int l=0;l<j;l++)
+
+int small,pos;
+for(int l=0;l<i;l++)
 {small=arr[l];
-	for(int k=0;k<j;k++)
-	{	if(arr[k]<small)
+	for(int k=l;k<i;k++)
+	{	if(arr[k]<=small)
 		{pos=k;
 	             small=arr[k];
 		}
@@ -30,6 +37,11 @@ for(int l=0;l<j;l++)
 arr[pos]=arr[l];
 arr2[l]=small;
 }   
-func_large(arr2[],i,k);
+
+for(int z=0;z<i;z++)
+cout<<endl<<arr2[z];
+
+func_large(arr2,i,k);
+func_small(arr2,i,k);
 return 0;
 }
